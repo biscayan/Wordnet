@@ -1,27 +1,56 @@
 # Wordnet
-Usage of wordnet in NLTK module
+워드넷을 활용하여 
 
-## What is wordnet?
-1. Wordnet  
-- wordnet is a large lexical database of English
-- wordnet is a combination of a dictionary and thesaurus
+## 워드넷이란?
+1. 워드넷의 정의  
+-워드넷은 
 
-2. History
-- 1985 : began research at Princeton University’s Cognitive Science Laboratory
-- 1993 : the appearance of WordNet
+2. 워드넷의 역사
+- 1985년, 언어학자이면서 심리학자인 George Armitage Miller의 주도 하에 프린스턴 대학의 인지 과학 연구소에서 워드넷에 대한 연구가 진행  
+- 
 
-3. Database
-- wordnet contains 155,327 words organized in 175,979 synsets for a total of 207,016 word sense pairs
+3. 워드넷의 데이터베이스
+- 워드넷은 전치사, 관사, 대명사와 같은 기능어들은 제외하고 명사, 동사, 형용사, 부사에 대한 단어들에 대한 정보만 제공  
 
-4. Structure 
-- Nouns and verbs : hierarchically connected like a tree
-- Adjectives : : not organized into hierarchical trees, they are connected by similarity relations
+- 워드넷 3.0의 데이터베이스
 
-## Functions
-1. Synonym : different phonological words which have the same or very similar meanings
-2. Antonym : words which are opposite in meaning
-3. Hypernym : the superordinate 
-4. Hyponym : a relation of inclusion the subordinate
-5. Meronym : a part–whole relationship between lexical items
-6. Holonym : the opposite of meronymy
-7. Entailment : fixed truth relations between sentences
+|품사|단어의 개수|
+|:---:|:---:|
+|명사|117,789|
+|동사|11,529|
+|형용사|22,479|
+|부사|4,481|  
+
+<br/>
+
+4. 워드넷의 구조
+
+## 프로젝트 기간 및 참여 인원
+- 대학원 2학기 전산언어학 수업의 선택과제로 진행
+- 프로젝트 기간 : 19.09.26 ~ 19.10.10  
+- 프로젝트 인원 : 2명
+- 나의 역할 : 코드작성 및 발표  
+- 팀원의 역할 : 자료조사  
+
+## 기술 스택
+- python
+
+## 워드넷의 기능
+1. 사전
+2. 동의어
+3. 반의어
+4. 상위어
+5. 하위어
+6. 부분어
+7. 전체어
+8. 함의
+
+## 프로그램 구현 예시
+1. 사전
+2. 동의어
+3. 반의어
+4. 상위어
+5. 하위어
+6. 부분어
+7. 전체어
+8. 함의
