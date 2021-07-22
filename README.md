@@ -45,7 +45,8 @@
 <br/>
 
 ## 워드넷 기능 구현
-- [전체 코드 확인](https://github.com/biscayan/Wordnet/blob/master/Wordnet.py)
+- [전체 코드 확인](https://github.com/biscayan/Wordnet/blob/master/Wordnet.py)  
+
 1. 사전 (Dictionary)
     <details>
     <summary>예시 보기</summary>
