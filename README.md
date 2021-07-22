@@ -44,7 +44,8 @@
 
 <br/>
 
-## 워드넷의 기능
+## 워드넷 기능 구현
+- [전체 코드 확인](https://github.com/biscayan/Wordnet/blob/master/Wordnet.py)
 1. 사전 (Dictionary)
     <details>
     <summary>예시 보기</summary>
@@ -138,11 +139,10 @@
     <summary>예시 보기</summary>
     <div markdown="1">
 
-        Input a synset : car.n.01
+        Input a word : car
 
         >>>
-        Hypernym :  motor_vehicle
-        Hypernym :  automotive_vehicle
+        Hypernyms :  {'motor_vehicle', 'wheeled_vehicle', 'automotive_vehicle', 'compartment'}
 
     </div>
     </details>
@@ -154,22 +154,10 @@
     <summary>예시 보기</summary>
     <div markdown="1">
 
-        Input a synset : vehicle.n.01
+        Input a word : vehicle
 
         >>>
-        Hyponym :  bumper_car
-        Hyponym :  Dodgem
-        Hyponym :  craft
-        Hyponym :  military_vehicle
-        Hyponym :  rocket
-        Hyponym :  projectile
-        Hyponym :  skibob
-        Hyponym :  sled
-        Hyponym :  sledge
-        Hyponym :  sleigh
-        Hyponym :  steamroller
-        Hyponym :  road_roller
-        Hyponym :  wheeled_vehicle
+        Hyponyms :  {'sledge', 'skibob', 'craft', 'rocket', 'bumper_car', 'sleigh', 'sled', 'steamroller', 'Dodgem', 'projectile', 'road_roller', 'military_vehicle', 'wheeled_vehicle'}
 
     </div>
     </details>
@@ -181,37 +169,10 @@
     <summary>예시 보기</summary>
     <div markdown="1">
 
-        Input a synset : face.n.01
+        Input a word : face
 
         >>>
-        Meronym :  beard
-        Meronym :  face_fungus
-        Meronym :  whiskers
-        Meronym :  brow
-        Meronym :  forehead
-        Meronym :  cheek
-        Meronym :  chin
-        Meronym :  mentum
-        Meronym :  eye
-        Meronym :  oculus
-        Meronym :  optic
-        Meronym :  eyebrow
-        Meronym :  brow
-        Meronym :  supercilium
-        Meronym :  facial
-        Meronym :  facial_nerve
-        Meronym :  nervus_facialis
-        Meronym :  seventh_cranial_nerve
-        Meronym :  facial_muscle
-        Meronym :  facial_vein
-        Meronym :  vena_facialis
-        Meronym :  feature
-        Meronym :  lineament
-        Meronym :  jaw
-        Meronym :  jowl
-        Meronym :  mouth
-        Meronym :  nose
-        Meronym :  olfactory_organ
+        Meronyms :  {'vena_facialis', 'mentum', 'eyebrow', 'nose', 'beard', 'whiskers', 'olfactory_organ', 'chin', 'jaw', 'brow', 'facial_nerve', 'facial_vein', 'supercilium', 'nervus_facialis', 'jowl', 'eye', 'mouth', 'forehead', 'facial', 'lineament', 'seventh_cranial_nerve', 'cheek', 'optic', 'oculus', 'facial_muscle', 'feature', 'face_fungus'}
 
     </div>
     </details>
@@ -223,13 +184,10 @@
     <summary>예시 보기</summary>
     <div markdown="1">
 
-        Input a synset : finger.n.01
+        Input a word : finger
 
         >>>
-        Holonym :  hand
-        Holonym :  manus
-        Holonym :  mitt
-        Holonym :  paw
+        Holonyms :  {'manus', 'paw', 'mitt', 'hand', 'glove'}
 
     </div>
     </details>
@@ -241,14 +199,10 @@
     <summary>예시 보기</summary>
     <div markdown="1">
 
-        Input a synset : snore.v.01
+        Input a word : snore
 
         >>>
-        Entailment :  sleep
-        Entailment :  kip
-        Entailment :  slumber
-        Entailment :  log_Z's
-        Entailment :  catch_some_Z's
+        Entailnemts :  {'slumber', "log_Z's", 'kip', "catch_some_Z's", 'sleep'}
 
     </div>
     </details>

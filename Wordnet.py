@@ -2,69 +2,133 @@ from nltk.corpus import wordnet
 
 class Wordnet:
 
-    #Dictionary
-    def dict(self):
-        syns=wordnet.synsets(input("Input a word : "))
+    def dictionary(self):
+
+        syns = wordnet.synsets(input("Input a word : "))
+
         for i in range(len(syns)):
             print(syns[i].name()," : ",end='')
             print(syns[i].definition())
             print(syns[i].examples())
             print()
 
-    #Synonym and antonym
-    def syn_ant(self):
-        synonyms =[]
-        antonyms =[]
+    def synonym(self):
 
-        for syn in wordnet.synsets(input("Input a word : ")): 
-            for lemma in syn.lemmas():
-                synonyms.append(lemma.name()) 
+        synonyms = set()
+
+        for syns in wordnet.synsets(input("Input a word : ")): 
+            for lemma in syns.lemmas():
+                synonyms.add(lemma.name()) 
+
+        print("Synonyms : ", synonyms)
+
+    def antonym(self):
+
+        antonyms = set()
+
+        for syns in wordnet.synsets(input("Input a word : ")): 
+            for lemma in syns.lemmas():
                 if lemma.antonyms():
-                    antonyms.append(lemma.antonyms()[0].name())
+                    antonyms.add(lemma.antonyms()[0].name())
 
-        print("Synonyms : ",set(synonyms))
-        print("Antonyms : ",set(antonyms))
+        print("Antonyms : ", antonyms)
 
-    #Hypernym
-    def hyper(self):
-        syns_target=wordnet.synset(input("Input a synset : "))
-        syns_hyper=syns_target.hypernyms()
-        for hyper in syns_hyper:
-            for lemma in hyper.lemmas():
-                print("Hypernym : ",lemma.name())
+    def hypernym(self):
 
-    #Hyponym
-    def hypo(self):
-        syns_target=wordnet.synset(input("Input a synset : "))
-        syns_hypo=syns_target.hyponyms()
-        for hypo in syns_hypo:
-            for lemma in hypo.lemmas():
-                print("Hyponym : ",lemma.name())
+        hypernyms = set()
+        
+        for syns in wordnet.synsets(input("Input a word : ")):
+            for hyper in syns.hypernyms():
+                for lemma in hyper.lemmas():
+                    hypernyms.add(lemma.name())
 
-    #Meronym
-    def mero(self):
-        syns_target=wordnet.synset(input("Input a synset : "))
-        syns_mero=syns_target.part_meronyms()
-        for mero in syns_mero:
-            for lemma in mero.lemmas():
-                print("Meronym : ",lemma.name())
+        print("Hypernyms : ", hypernyms)
+        
+    def hyponym(self):
 
-    #Holonym
-    def holo(self):
-        syns_target=wordnet.synset(input("Input a synset : "))
-        syns_holo=syns_target.part_holonyms()
-        for holo in syns_holo:
-            for lemma in holo.lemmas():
-                print("Holonym : ",lemma.name())
+        hyponyms = set()
+        
+        for syns in wordnet.synsets(input("Input a word : ")):
+            for hypo in syns.hyponyms():
+                for lemma in hypo.lemmas():
+                    hyponyms.add(lemma.name())
 
-    #Entailment
-    def entail(self):
-        syns_target=wordnet.synset(input("Input a synset : "))
-        syns_entail=syns_target.entailments()
-        for entail in syns_entail:
-            for lemma in entail.lemmas():
-                print("Entailment : ",lemma.name())
+        print("Hyponyms : ", hyponyms)
+
+    def meronym(self):
+
+        meronyms = set()
+        
+        for syns in wordnet.synsets(input("Input a word : ")):
+            for mero in syns.part_meronyms():
+                for lemma in mero.lemmas():
+                    meronyms.add(lemma.name())
+
+        print("Meronyms : ", meronyms)
+
+    def holonym(self):
+
+        holonyms = set()
+        
+        for syns in wordnet.synsets(input("Input a word : ")):
+            for holo in syns.part_holonyms():
+                for lemma in holo.lemmas():
+                    holonyms.add(lemma.name())
+
+        print("Holonyms : ", holonyms)
+
+    def entailnemt(self):
+
+        entailments = set()
+        
+        for syns in wordnet.synsets(input("Input a word : ")):
+            for entail in syns.entailments():
+                for lemma in entail.lemmas():
+                    entailments.add(lemma.name())
+
+        print("Entailnemts : ", entailments)
+
 
 if __name__ == '__main__':
 
-    word=Wordnet()
+    word = Wordnet()
+
+    print("1 : Dictionary")
+    print("2 : Synonym")
+    print("3 : Antonym")
+    print("4 : Hypernym")
+    print("5 : Hyponym")
+    print("6 : Meronym")
+    print("7 : Holonym")
+    print("8 : Entailnemt")
+    print()
+
+    flag = True
+
+    while flag:
+
+        mode = int(input("Choose a relationship(number) that you want to know : "))
+        print()
+        
+        if mode == 1:
+            word.dictionary()
+        elif mode == 2:
+            word.synonym()
+        elif mode == 3:
+            word.antonym()
+        elif mode == 4:
+            word.hypernym()
+        elif mode == 5:
+            word.hyponym()
+        elif mode == 6:
+            word.meronym()
+        elif mode == 7:
+            word.holonym()
+        elif mode == 8:
+            word.entailnemt()
+        print()
+
+        another = input("Do you want to know another relationship? (Yes / No) : ")
+
+        if another == "No" or another == "no":
+            flag = False
